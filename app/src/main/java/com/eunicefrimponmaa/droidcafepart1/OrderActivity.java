@@ -28,7 +28,7 @@ private static final String TAG_ACTIVITY = OrderActivity.class.getSimpleName();
             case R.id.nextday:
                 if(checked)
                     //next day delivery
-                    displayToast(getString(R.string.same_day_messenger_service));
+                    displayToast(getString(R.string.next_day_ground_delivery));
                 break;
 
             case R.id.pickup:
