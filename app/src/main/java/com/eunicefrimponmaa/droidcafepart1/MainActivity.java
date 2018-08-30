@@ -1,6 +1,7 @@
 package com.eunicefrimponmaa.droidcafepart1;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -24,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                  //      .setAction("Action", null).show();
+                displayMap();
             }
         });
     }
@@ -55,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
                 return  true;
             case R.id.action_favorites:
                 displayToast(getString(R.string.action_favorites_message));
+                return true;
+
+            case R.id.action_contact:
+                displayToast(getString(R.string.action_contact_message));
                 return true;
 
              default:
@@ -88,6 +94,17 @@ public class MainActivity extends AppCompatActivity {
     //shows a message that the froyo image was clicked
     public  void showFroyoOrder(View view){
         showFoodOrder(getString(R.string.froyo_order_message));
+    }
+
+    public void displayMap(){
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        //Using the coordinates for Google headquaters
+        String data =  getString(R.string.google_mtv_coord_zoom12);
+        intent.setData(Uri.parse(data));
+        if(intent.resolveActivity(getPackageManager())!=null){
+            startActivity(intent);
+        }
     }
 
 }

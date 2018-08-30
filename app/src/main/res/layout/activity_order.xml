@@ -13,7 +13,7 @@
         android:layout_marginTop="@dimen/text_margon_top"
         android:layout_marginBottom="@dimen/text_margin_bottom"
         android:textSize="@dimen/intro_text_size"
-        android:text="Choose andy delivery method" />
+        android:text="@string/choose_andy_delivery_method" />
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
